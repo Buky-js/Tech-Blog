@@ -5,12 +5,13 @@ const PORT = 3001;
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require('./controllers');
 
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+
 
 app.set('view engine', 'handlebars');
 const hbs = exphbs.create({});
