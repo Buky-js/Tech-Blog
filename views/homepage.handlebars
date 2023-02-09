@@ -1,0 +1,32 @@
+{{#each blogs as |blog|}}
+
+<div class="container">
+  <div class="notification is-primary">
+    
+    <article class="message">
+      <div class="message-header">
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle">
+             <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+            </p>
+          </div>
+          
+        </div>
+        
+        <div class="level-right">
+         
+          <p class="level-item"><h5>Posted by {{blog.user.name}} on {{blog.date_created}}</h5></p>
+          
+        </div>
+      </div>
+      <div class="message-body">
+        {{blog.content}}
+      </div>
+    </article>
+  </div>
+</div>
+
+
+
+{{/each}}
